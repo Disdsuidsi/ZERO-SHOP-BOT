@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands
 from discord import app_commands
 from discord.ui import Button, View, Select
@@ -446,5 +447,6 @@ async def help_command(interaction: discord.Interaction):
 
 # 봇 실행
 if __name__ == "__main__":
-    TOKEN = "MTQ3MDY5NjI0Mjg4MjI4MTUxMg.GFIxhm.LzOkqHESZ9eswXJ3SrWRNN9exUHt1zixMV15Zw"  # 봇 토큰 입력
+    access_token = os.environ["BOT_TOKEN"]
+    TOKEN = access_token  # 봇 토큰 입력
     bot.run(TOKEN)
